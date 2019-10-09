@@ -6,6 +6,7 @@ import (
 
 	"github.com/owulveryck/onnx-go"
 	"github.com/owulveryck/onnx-go/backend/x/gorgonnx"
+	xvm "gorgonia.org/gorgonia/x/vm"
 	"gorgonia.org/tensor"
 )
 
@@ -25,9 +26,24 @@ func main() {
 		tensor.WithShape(1, 128, 128, 3),
 		tensor.Of(tensor.Float32))
 	model.SetInput(0, t)
+	err = backend.PopulateExprgraph()
+	if err != nil {
+		log.Println(err)
+	}
+	exprgraph, _ := backend.GetExprGraph()
+	backend.SetVM(xvm.NewGoMachine(exprgraph))
 	err = backend.Run()
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
-
+	/*
+		b, err = dot.Marshal(exprgraph)
+		if err != nil {
+			log.Fatal(err)
+		}
+		err = ioutil.WriteFile("model.dot", b, 0644)
+		if err != nil {
+			log.Fatal(err)
+		}
+	*/
 }
