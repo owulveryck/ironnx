@@ -1,0 +1,1398 @@
+strict digraph {
+	graph [
+		rankdir=TB
+	];
+	node [
+		style=rounded
+		fontsize=10
+		shape=none
+	];
+
+	subgraph cluster_ExprGraph {
+		graph [
+			label=ExprGraph
+			color=lightgray
+			style=filled
+			nodeset=0.5
+			ranksep="1.2 equally"
+		];
+		node [
+			style="rounded,filled"
+			fillcolor=white
+			shape=Mrecord
+		];
+
+	}
+	subgraph Constants {
+		graph [
+			label=Constants
+			rank="max"
+		];
+		node [
+			style="rounded,filled"
+			shape=record
+			fillcolor=pink
+		];
+
+		// Node definitions.
+		Node_0xc00035d960 [
+			id="0xc00035d960"
+			shape=Mrecord
+			label="{{0|0x1b}|{Op|const| 0}|{Shape|()}}"
+		];
+	}
+	subgraph Inputs {
+		graph [
+			label=Inputs
+			rank="max"
+		];
+		node [
+			style="rounded,filled"
+			shape=record
+			fillcolor=yellow
+		];
+
+		// Node definitions.
+		Node_0xc00035c000 [
+			id="0xc00035c000"
+			shape=Mrecord
+			label="{{node1|0x0}|{Op|%!s(&lt;nil&gt;)}|{Shape|(20)}}"
+		];
+		Node_0xc00035c0e0 [
+			id="0xc00035c0e0"
+			shape=Mrecord
+			label="{{node2|0x1}|{Op|%!s(&lt;nil&gt;)}|{Shape|(32, 3, 3, 3)}}"
+		];
+		Node_0xc00035c1c0 [
+			id="0xc00035c1c0"
+			shape=Mrecord
+			label="{{node3|0x2}|{Op|%!s(&lt;nil&gt;)}|{Shape|(128)}}"
+		];
+		Node_0xc00035c2a0 [
+			id="0xc00035c2a0"
+			shape=Mrecord
+			label="{{node4|0x3}|{Op|%!s(&lt;nil&gt;)}|{Shape|(8)}}"
+		];
+		Node_0xc00035c380 [
+			id="0xc00035c380"
+			shape=Mrecord
+			label="{{node5|0x4}|{Op|%!s(&lt;nil&gt;)}|{Shape|(12, 20, 3, 3)}}"
+		];
+		Node_0xc00035c460 [
+			id="0xc00035c460"
+			shape=Mrecord
+			label="{{node6|0x5}|{Op|%!s(&lt;nil&gt;)}|{Shape|(32)}}"
+		];
+		Node_0xc00035c540 [
+			id="0xc00035c540"
+			shape=Mrecord
+			label="{{node7|0x6}|{Op|%!s(&lt;nil&gt;)}|{Shape|(128, 1)}}"
+		];
+		Node_0xc00035c620 [
+			id="0xc00035c620"
+			shape=Mrecord
+			label="{{node8|0x7}|{Op|%!s(&lt;nil&gt;)}|{Shape|(1)}}"
+		];
+		Node_0xc00035c700 [
+			id="0xc00035c700"
+			shape=Mrecord
+			label="{{node9|0x8}|{Op|%!s(&lt;nil&gt;)}|{Shape|(2)}}"
+		];
+		Node_0xc00035c8c0 [
+			id="0xc00035c8c0"
+			shape=Mrecord
+			label="{{node10|0x9}|{Op|%!s(&lt;nil&gt;)}|{Shape|(8, 12, 3, 3)}}"
+		];
+		Node_0xc00035c9a0 [
+			id="0xc00035c9a0"
+			shape=Mrecord
+			label="{{node11|0xa}|{Op|%!s(&lt;nil&gt;)}|{Shape|(1, 128, 128, 3)}}"
+		];
+		Node_0xc00035ca80 [
+			id="0xc00035ca80"
+			shape=Mrecord
+			label="{{node12|0xb}|{Op|%!s(&lt;nil&gt;)}|{Shape|(20, 32, 3, 3)}}"
+		];
+		Node_0xc00035cb60 [
+			id="0xc00035cb60"
+			shape=Mrecord
+			label="{{node13|0xc}|{Op|%!s(&lt;nil&gt;)}|{Shape|(288, 128)}}"
+		];
+		Node_0xc00035cc40 [
+			id="0xc00035cc40"
+			shape=Mrecord
+			label="{{node14|0xd}|{Op|%!s(&lt;nil&gt;)}|{Shape|(12)}}"
+		];
+	}
+	subgraph cluster_ExprGraph {
+		graph [
+			label=ExprGraph
+			color=lightgray
+			style=filled
+			nodeset=0.5
+			ranksep="1.2 equally"
+		];
+		node [
+			style="rounded,filled"
+			fillcolor=white
+			shape=Mrecord
+		];
+
+		subgraph cluster_Convolution9 {
+			graph [
+				label=Convolution
+				color=coral
+				style=filled
+				nodeset=0.5
+				ranksep="1.2 equally"
+			];
+			node [
+				style="rounded,filled"
+				fillcolor=white
+				shape=Mrecord
+			];
+
+			// Node definitions.
+			Node_0xc00047a0e0 [
+				id="0xc00047a0e0"
+				shape=Mrecord
+				label="{{im2col&lt;(3,3), (0, 0), (1,1) (1, 1)&gt;(%1e)|0x1f}|{Op|im2col&lt;(3,3), (0, 0), (1,1) (1, 1)&gt;}|{Shape|(1, 61, 61, 288)}}"
+			];
+			Node_0xc00047a1c0 [
+				id="0xc00047a1c0"
+				shape=Mrecord
+				label="{{Reshape(20, 288)(%b)|0x20}|{Op|Reshape(20, 288)}|{Shape|(20, 288)}}"
+			];
+			Node_0xc00047a2a0 [
+				id="0xc00047a2a0"
+				shape=Mrecord
+				label="{{Reshape(3721, 288)(%1f)|0x21}|{Op|Reshape(3721, 288)}|{Shape|(3721, 288)}}"
+			];
+			Node_0xc0000ce000 [
+				id="0xc0000ce000"
+				shape=Mrecord
+				label="{{A × Bᵀ(%21, %20)|0x22}|{Op|A × Bᵀ}|{Shape|(3721, 20)}}"
+			];
+			Node_0xc0000ce0e0 [
+				id="0xc0000ce0e0"
+				shape=Mrecord
+				label="{{Reshape(1, 61, 61, 20)(%22)|0x23}|{Op|Reshape(1, 61, 61, 20)}|{Shape|(1, 61, 61, 20)}}"
+			];
+			Node_0xc0000ceee0 [
+				id="0xc0000ceee0"
+				shape=Mrecord
+				label="{{Aᵀ&#123;0, 3, 1, 2&#125;(%23)|0x24}|{Op|Aᵀ&#123;0, 3, 1, 2&#125;}|{Shape|(1, 20, 61, 61)}}"
+			];
+		}
+		subgraph cluster_Convolution15 {
+			graph [
+				label=Convolution
+				color=coral
+				style=filled
+				nodeset=0.5
+				ranksep="1.2 equally"
+			];
+			node [
+				style="rounded,filled"
+				fillcolor=white
+				shape=Mrecord
+			];
+
+			// Node definitions.
+			Node_0xc00047a380 [
+				id="0xc00047a380"
+				shape=Mrecord
+				label="{{im2col&lt;(3,3), (0, 0), (1,1) (1, 1)&gt;(%3c)|0x3d}|{Op|im2col&lt;(3,3), (0, 0), (1,1) (1, 1)&gt;}|{Shape|(1, 12, 12, 108)}}"
+			];
+			Node_0xc00047a460 [
+				id="0xc00047a460"
+				shape=Mrecord
+				label="{{Reshape(8, 108)(%9)|0x3e}|{Op|Reshape(8, 108)}|{Shape|(8, 108)}}"
+			];
+			Node_0xc00047a540 [
+				id="0xc00047a540"
+				shape=Mrecord
+				label="{{Reshape(144, 108)(%3d)|0x3f}|{Op|Reshape(144, 108)}|{Shape|(144, 108)}}"
+			];
+			Node_0xc00047a620 [
+				id="0xc00047a620"
+				shape=Mrecord
+				label="{{A × Bᵀ(%3f, %3e)|0x40}|{Op|A × Bᵀ}|{Shape|(144, 8)}}"
+			];
+			Node_0xc00047a700 [
+				id="0xc00047a700"
+				shape=Mrecord
+				label="{{Reshape(1, 12, 12, 8)(%40)|0x41}|{Op|Reshape(1, 12, 12, 8)}|{Shape|(1, 12, 12, 8)}}"
+			];
+			Node_0xc00047a7e0 [
+				id="0xc00047a7e0"
+				shape=Mrecord
+				label="{{Aᵀ&#123;0, 3, 1, 2&#125;(%41)|0x42}|{Op|Aᵀ&#123;0, 3, 1, 2&#125;}|{Shape|(1, 8, 12, 12)}}"
+			];
+		}
+		subgraph cluster_Convolution6 {
+			graph [
+				label=Convolution
+				color=coral
+				style=filled
+				nodeset=0.5
+				ranksep="1.2 equally"
+			];
+			node [
+				style="rounded,filled"
+				fillcolor=white
+				shape=Mrecord
+			];
+
+			// Node definitions.
+			Node_0xc00035ce00 [
+				id="0xc00035ce00"
+				shape=Mrecord
+				label="{{im2col&lt;(3,3), (0, 0), (1,1) (1, 1)&gt;(%e)|0xf}|{Op|im2col&lt;(3,3), (0, 0), (1,1) (1, 1)&gt;}|{Shape|(1, 126, 126, 27)}}"
+			];
+			Node_0xc00035cee0 [
+				id="0xc00035cee0"
+				shape=Mrecord
+				label="{{Reshape(32, 27)(%1)|0x10}|{Op|Reshape(32, 27)}|{Shape|(32, 27)}}"
+			];
+			Node_0xc00035cfc0 [
+				id="0xc00035cfc0"
+				shape=Mrecord
+				label="{{Reshape(15876, 27)(%f)|0x11}|{Op|Reshape(15876, 27)}|{Shape|(15876, 27)}}"
+			];
+			Node_0xc00035d0a0 [
+				id="0xc00035d0a0"
+				shape=Mrecord
+				label="{{A × Bᵀ(%11, %10)|0x12}|{Op|A × Bᵀ}|{Shape|(15876, 32)}}"
+			];
+			Node_0xc00035d180 [
+				id="0xc00035d180"
+				shape=Mrecord
+				label="{{Reshape(1, 126, 126, 32)(%12)|0x13}|{Op|Reshape(1, 126, 126, 32)}|{Shape|(1, 126, 126, 32)}}"
+			];
+			Node_0xc00035d260 [
+				id="0xc00035d260"
+				shape=Mrecord
+				label="{{Aᵀ&#123;0, 3, 1, 2&#125;(%13)|0x14}|{Op|Aᵀ&#123;0, 3, 1, 2&#125;}|{Shape|(1, 32, 126, 126)}}"
+			];
+		}
+		subgraph cluster_Convolution12 {
+			graph [
+				label=Convolution
+				color=coral
+				style=filled
+				nodeset=0.5
+				ranksep="1.2 equally"
+			];
+			node [
+				style="rounded,filled"
+				fillcolor=white
+				shape=Mrecord
+			];
+
+			// Node definitions.
+			Node_0xc0000cf7a0 [
+				id="0xc0000cf7a0"
+				shape=Mrecord
+				label="{{im2col&lt;(3,3), (0, 0), (1,1) (1, 1)&gt;(%2d)|0x2e}|{Op|im2col&lt;(3,3), (0, 0), (1,1) (1, 1)&gt;}|{Shape|(1, 28, 28, 180)}}"
+			];
+			Node_0xc0000cf880 [
+				id="0xc0000cf880"
+				shape=Mrecord
+				label="{{Reshape(12, 180)(%4)|0x2f}|{Op|Reshape(12, 180)}|{Shape|(12, 180)}}"
+			];
+			Node_0xc0000cf960 [
+				id="0xc0000cf960"
+				shape=Mrecord
+				label="{{Reshape(784, 180)(%2e)|0x30}|{Op|Reshape(784, 180)}|{Shape|(784, 180)}}"
+			];
+			Node_0xc0000cfa40 [
+				id="0xc0000cfa40"
+				shape=Mrecord
+				label="{{A × Bᵀ(%30, %2f)|0x31}|{Op|A × Bᵀ}|{Shape|(784, 12)}}"
+			];
+			Node_0xc0000cfb20 [
+				id="0xc0000cfb20"
+				shape=Mrecord
+				label="{{Reshape(1, 28, 28, 12)(%31)|0x32}|{Op|Reshape(1, 28, 28, 12)}|{Shape|(1, 28, 28, 12)}}"
+			];
+			Node_0xc0000cfc00 [
+				id="0xc0000cfc00"
+				shape=Mrecord
+				label="{{Aᵀ&#123;0, 3, 1, 2&#125;(%32)|0x33}|{Op|Aᵀ&#123;0, 3, 1, 2&#125;}|{Shape|(1, 12, 28, 28)}}"
+			];
+		}
+		subgraph cluster_Rectify18 {
+			graph [
+				label=Rectify
+				color=coral
+				style=filled
+				nodeset=0.5
+				ranksep="1.2 equally"
+			];
+			node [
+				style="rounded,filled"
+				fillcolor=white
+				shape=Mrecord
+			];
+
+			// Node definitions.
+			Node_0xc00047b420 [
+				id="0xc00047b420"
+				shape=Mrecord
+				label="{{&gt;= true(%4f, %1b)|0x50}|{Op|&gt;= true}|{Shape|(128)}}"
+			];
+		}
+		subgraph cluster_Maxpool11 {
+			graph [
+				label=Maxpool
+				color=coral
+				style=filled
+				nodeset=0.5
+				ranksep="1.2 equally"
+			];
+			node [
+				style="rounded,filled"
+				fillcolor=white
+				shape=Mrecord
+			];
+
+			// Node definitions.
+			Node_0xc0000cf6c0 [
+				id="0xc0000cf6c0"
+				shape=Mrecord
+				label="{{MaxPool&#123;1, 20, 61, 61&#125;(kernel: (2, 2), pad: (0, 0), stride: (2, 2))(%2c)|0x2d}|{Op|MaxPool&#123;1, 20, 61, 61&#125;(kernel: (2, 2), pad: (0, 0), stride: (2, 2))}|{Shape|(1, 20, 30, 30)}}"
+			];
+		}
+		subgraph cluster_Rectify16 {
+			graph [
+				label=Rectify
+				color=coral
+				style=filled
+				nodeset=0.5
+				ranksep="1.2 equally"
+			];
+			node [
+				style="rounded,filled"
+				fillcolor=white
+				shape=Mrecord
+			];
+
+			// Node definitions.
+			Node_0xc00047ae00 [
+				id="0xc00047ae00"
+				shape=Mrecord
+				label="{{&gt;= true(%48, %1b)|0x49}|{Op|&gt;= true}|{Shape|(1, 8, 12, 12)}}"
+			];
+		}
+		subgraph cluster_Rectify10 {
+			graph [
+				label=Rectify
+				color=coral
+				style=filled
+				nodeset=0.5
+				ranksep="1.2 equally"
+			];
+			node [
+				style="rounded,filled"
+				fillcolor=white
+				shape=Mrecord
+			];
+
+			// Node definitions.
+			Node_0xc0000cf500 [
+				id="0xc0000cf500"
+				shape=Mrecord
+				label="{{&gt;= true(%2a, %1b)|0x2b}|{Op|&gt;= true}|{Shape|(1, 20, 61, 61)}}"
+			];
+		}
+		subgraph cluster_Rectify13 {
+			graph [
+				label=Rectify
+				color=coral
+				style=filled
+				nodeset=0.5
+				ranksep="1.2 equally"
+			];
+			node [
+				style="rounded,filled"
+				fillcolor=white
+				shape=Mrecord
+			];
+
+			// Node definitions.
+			Node_0xc00035dce0 [
+				id="0xc00035dce0"
+				shape=Mrecord
+				label="{{&gt;= true(%39, %1b)|0x3a}|{Op|&gt;= true}|{Shape|(1, 12, 28, 28)}}"
+			];
+		}
+		subgraph cluster_Maxpool14 {
+			graph [
+				label=Maxpool
+				color=coral
+				style=filled
+				nodeset=0.5
+				ranksep="1.2 equally"
+			];
+			node [
+				style="rounded,filled"
+				fillcolor=white
+				shape=Mrecord
+			];
+
+			// Node definitions.
+			Node_0xc00035dea0 [
+				id="0xc00035dea0"
+				shape=Mrecord
+				label="{{MaxPool&#123;1, 12, 28, 28&#125;(kernel: (2, 2), pad: (0, 0), stride: (2, 2))(%3b)|0x3c}|{Op|MaxPool&#123;1, 12, 28, 28&#125;(kernel: (2, 2), pad: (0, 0), stride: (2, 2))}|{Shape|(1, 12, 14, 14)}}"
+			];
+		}
+		subgraph cluster_Maxpool17 {
+			graph [
+				label=Maxpool
+				color=coral
+				style=filled
+				nodeset=0.5
+				ranksep="1.2 equally"
+			];
+			node [
+				style="rounded,filled"
+				fillcolor=white
+				shape=Mrecord
+			];
+
+			// Node definitions.
+			Node_0xc00047afc0 [
+				id="0xc00047afc0"
+				shape=Mrecord
+				label="{{MaxPool&#123;1, 8, 12, 12&#125;(kernel: (2, 2), pad: (0, 0), stride: (2, 2))(%4a)|0x4b}|{Op|MaxPool&#123;1, 8, 12, 12&#125;(kernel: (2, 2), pad: (0, 0), stride: (2, 2))}|{Shape|(1, 8, 6, 6)}}"
+			];
+		}
+		subgraph cluster_Rectify7 {
+			graph [
+				label=Rectify
+				color=coral
+				style=filled
+				nodeset=0.5
+				ranksep="1.2 equally"
+			];
+			node [
+				style="rounded,filled"
+				fillcolor=white
+				shape=Mrecord
+			];
+
+			// Node definitions.
+			Node_0xc00035d880 [
+				id="0xc00035d880"
+				shape=Mrecord
+				label="{{&gt;= true(%1a, %1b)|0x1c}|{Op|&gt;= true}|{Shape|(1, 32, 126, 126)}}"
+			];
+		}
+		subgraph cluster_Maxpool8 {
+			graph [
+				label=Maxpool
+				color=coral
+				style=filled
+				nodeset=0.5
+				ranksep="1.2 equally"
+			];
+			node [
+				style="rounded,filled"
+				fillcolor=white
+				shape=Mrecord
+			];
+
+			// Node definitions.
+			Node_0xc00047a000 [
+				id="0xc00047a000"
+				shape=Mrecord
+				label="{{MaxPool&#123;1, 32, 126, 126&#125;(kernel: (2, 2), pad: (0, 0), stride: (2, 2))(%1d)|0x1e}|{Op|MaxPool&#123;1, 32, 126, 126&#125;(kernel: (2, 2), pad: (0, 0), stride: (2, 2))}|{Shape|(1, 32, 63, 63)}}"
+			];
+		}
+		// Node definitions.
+		Node_0xc00035cd20 [
+			id="0xc00035cd20"
+			shape=Mrecord
+			label="{{Aᵀ&#123;0, 3, 1, 2&#125;(%a)|0xe}|{Op|Aᵀ&#123;0, 3, 1, 2&#125;}|{Shape|(1, 3, 128, 128)}}"
+		];
+		Node_0xc00035ce00 [
+			id="0xc00035ce00"
+			shape=Mrecord
+			label="{{im2col&lt;(3,3), (0, 0), (1,1) (1, 1)&gt;(%e)|0xf}|{Op|im2col&lt;(3,3), (0, 0), (1,1) (1, 1)&gt;}|{Shape|(1, 126, 126, 27)}}"
+		];
+		Node_0xc00035cee0 [
+			id="0xc00035cee0"
+			shape=Mrecord
+			label="{{Reshape(32, 27)(%1)|0x10}|{Op|Reshape(32, 27)}|{Shape|(32, 27)}}"
+		];
+		Node_0xc00035cfc0 [
+			id="0xc00035cfc0"
+			shape=Mrecord
+			label="{{Reshape(15876, 27)(%f)|0x11}|{Op|Reshape(15876, 27)}|{Shape|(15876, 27)}}"
+		];
+		Node_0xc00035d0a0 [
+			id="0xc00035d0a0"
+			shape=Mrecord
+			label="{{A × Bᵀ(%11, %10)|0x12}|{Op|A × Bᵀ}|{Shape|(15876, 32)}}"
+		];
+		Node_0xc00035d180 [
+			id="0xc00035d180"
+			shape=Mrecord
+			label="{{Reshape(1, 126, 126, 32)(%12)|0x13}|{Op|Reshape(1, 126, 126, 32)}|{Shape|(1, 126, 126, 32)}}"
+		];
+		Node_0xc00035d260 [
+			id="0xc00035d260"
+			shape=Mrecord
+			label="{{Aᵀ&#123;0, 3, 1, 2&#125;(%13)|0x14}|{Op|Aᵀ&#123;0, 3, 1, 2&#125;}|{Shape|(1, 32, 126, 126)}}"
+		];
+		Node_0xc00035d340 [
+			id="0xc00035d340"
+			shape=Mrecord
+			label="{{Reshape(1, 32, 1, 1)(%5)|0x15}|{Op|Reshape(1, 32, 1, 1)}|{Shape|(1, 32, 1, 1)}}"
+		];
+		Node_0xc00035d420 [
+			id="0xc00035d420"
+			shape=Mrecord
+			label="{{SizeOf=1(%14)|0x16}|{Op|SizeOf=1}|{Shape|()}}"
+		];
+		Node_0xc00035d500 [
+			id="0xc00035d500"
+			shape=Mrecord
+			label="{{SizeOf=126(%14)|0x17}|{Op|SizeOf=126}|{Shape|()}}"
+		];
+		Node_0xc00035d5e0 [
+			id="0xc00035d5e0"
+			shape=Mrecord
+			label="{{SizeOf=126(%14)|0x18}|{Op|SizeOf=126}|{Shape|()}}"
+		];
+		Node_0xc00035d6c0 [
+			id="0xc00035d6c0"
+			shape=Mrecord
+			label="{{Repeat[0 2 3](%15, %16, %17, %18)|0x19}|{Op|Repeat[0 2 3]}|{Shape|(1, 32, 126, 126)}}"
+		];
+		Node_0xc00035d7a0 [
+			id="0xc00035d7a0"
+			shape=Mrecord
+			label="{{+ false(%14, %19)|0x1a}|{Op|+ false}|{Shape|(1, 32, 126, 126)}}"
+		];
+		Node_0xc00035d880 [
+			id="0xc00035d880"
+			shape=Mrecord
+			label="{{&gt;= true(%1a, %1b)|0x1c}|{Op|&gt;= true}|{Shape|(1, 32, 126, 126)}}"
+		];
+		Node_0xc00035da40 [
+			id="0xc00035da40"
+			shape=Mrecord
+			label="{{⊙ false(%1a, %1c)|0x1d}|{Op|⊙ false}|{Shape|(1, 32, 126, 126)}}"
+		];
+		Node_0xc00047a000 [
+			id="0xc00047a000"
+			shape=Mrecord
+			label="{{MaxPool&#123;1, 32, 126, 126&#125;(kernel: (2, 2), pad: (0, 0), stride: (2, 2))(%1d)|0x1e}|{Op|MaxPool&#123;1, 32, 126, 126&#125;(kernel: (2, 2), pad: (0, 0), stride: (2, 2))}|{Shape|(1, 32, 63, 63)}}"
+		];
+		Node_0xc00047a0e0 [
+			id="0xc00047a0e0"
+			shape=Mrecord
+			label="{{im2col&lt;(3,3), (0, 0), (1,1) (1, 1)&gt;(%1e)|0x1f}|{Op|im2col&lt;(3,3), (0, 0), (1,1) (1, 1)&gt;}|{Shape|(1, 61, 61, 288)}}"
+		];
+		Node_0xc00047a1c0 [
+			id="0xc00047a1c0"
+			shape=Mrecord
+			label="{{Reshape(20, 288)(%b)|0x20}|{Op|Reshape(20, 288)}|{Shape|(20, 288)}}"
+		];
+		Node_0xc00047a2a0 [
+			id="0xc00047a2a0"
+			shape=Mrecord
+			label="{{Reshape(3721, 288)(%1f)|0x21}|{Op|Reshape(3721, 288)}|{Shape|(3721, 288)}}"
+		];
+		Node_0xc0000ce000 [
+			id="0xc0000ce000"
+			shape=Mrecord
+			label="{{A × Bᵀ(%21, %20)|0x22}|{Op|A × Bᵀ}|{Shape|(3721, 20)}}"
+		];
+		Node_0xc0000ce0e0 [
+			id="0xc0000ce0e0"
+			shape=Mrecord
+			label="{{Reshape(1, 61, 61, 20)(%22)|0x23}|{Op|Reshape(1, 61, 61, 20)}|{Shape|(1, 61, 61, 20)}}"
+		];
+		Node_0xc0000ceee0 [
+			id="0xc0000ceee0"
+			shape=Mrecord
+			label="{{Aᵀ&#123;0, 3, 1, 2&#125;(%23)|0x24}|{Op|Aᵀ&#123;0, 3, 1, 2&#125;}|{Shape|(1, 20, 61, 61)}}"
+		];
+		Node_0xc0000cefc0 [
+			id="0xc0000cefc0"
+			shape=Mrecord
+			label="{{Reshape(1, 20, 1, 1)(%0)|0x25}|{Op|Reshape(1, 20, 1, 1)}|{Shape|(1, 20, 1, 1)}}"
+		];
+		Node_0xc0000cf0a0 [
+			id="0xc0000cf0a0"
+			shape=Mrecord
+			label="{{SizeOf=1(%24)|0x26}|{Op|SizeOf=1}|{Shape|()}}"
+		];
+		Node_0xc0000cf180 [
+			id="0xc0000cf180"
+			shape=Mrecord
+			label="{{SizeOf=61(%24)|0x27}|{Op|SizeOf=61}|{Shape|()}}"
+		];
+		Node_0xc0000cf260 [
+			id="0xc0000cf260"
+			shape=Mrecord
+			label="{{SizeOf=61(%24)|0x28}|{Op|SizeOf=61}|{Shape|()}}"
+		];
+		Node_0xc0000cf340 [
+			id="0xc0000cf340"
+			shape=Mrecord
+			label="{{Repeat[0 2 3](%25, %26, %27, %28)|0x29}|{Op|Repeat[0 2 3]}|{Shape|(1, 20, 61, 61)}}"
+		];
+		Node_0xc0000cf420 [
+			id="0xc0000cf420"
+			shape=Mrecord
+			label="{{+ false(%24, %29)|0x2a}|{Op|+ false}|{Shape|(1, 20, 61, 61)}}"
+		];
+		Node_0xc0000cf500 [
+			id="0xc0000cf500"
+			shape=Mrecord
+			label="{{&gt;= true(%2a, %1b)|0x2b}|{Op|&gt;= true}|{Shape|(1, 20, 61, 61)}}"
+		];
+		Node_0xc0000cf5e0 [
+			id="0xc0000cf5e0"
+			shape=Mrecord
+			label="{{⊙ false(%2a, %2b)|0x2c}|{Op|⊙ false}|{Shape|(1, 20, 61, 61)}}"
+		];
+		Node_0xc0000cf6c0 [
+			id="0xc0000cf6c0"
+			shape=Mrecord
+			label="{{MaxPool&#123;1, 20, 61, 61&#125;(kernel: (2, 2), pad: (0, 0), stride: (2, 2))(%2c)|0x2d}|{Op|MaxPool&#123;1, 20, 61, 61&#125;(kernel: (2, 2), pad: (0, 0), stride: (2, 2))}|{Shape|(1, 20, 30, 30)}}"
+		];
+		Node_0xc0000cf7a0 [
+			id="0xc0000cf7a0"
+			shape=Mrecord
+			label="{{im2col&lt;(3,3), (0, 0), (1,1) (1, 1)&gt;(%2d)|0x2e}|{Op|im2col&lt;(3,3), (0, 0), (1,1) (1, 1)&gt;}|{Shape|(1, 28, 28, 180)}}"
+		];
+		Node_0xc0000cf880 [
+			id="0xc0000cf880"
+			shape=Mrecord
+			label="{{Reshape(12, 180)(%4)|0x2f}|{Op|Reshape(12, 180)}|{Shape|(12, 180)}}"
+		];
+		Node_0xc0000cf960 [
+			id="0xc0000cf960"
+			shape=Mrecord
+			label="{{Reshape(784, 180)(%2e)|0x30}|{Op|Reshape(784, 180)}|{Shape|(784, 180)}}"
+		];
+		Node_0xc0000cfa40 [
+			id="0xc0000cfa40"
+			shape=Mrecord
+			label="{{A × Bᵀ(%30, %2f)|0x31}|{Op|A × Bᵀ}|{Shape|(784, 12)}}"
+		];
+		Node_0xc0000cfb20 [
+			id="0xc0000cfb20"
+			shape=Mrecord
+			label="{{Reshape(1, 28, 28, 12)(%31)|0x32}|{Op|Reshape(1, 28, 28, 12)}|{Shape|(1, 28, 28, 12)}}"
+		];
+		Node_0xc0000cfc00 [
+			id="0xc0000cfc00"
+			shape=Mrecord
+			label="{{Aᵀ&#123;0, 3, 1, 2&#125;(%32)|0x33}|{Op|Aᵀ&#123;0, 3, 1, 2&#125;}|{Shape|(1, 12, 28, 28)}}"
+		];
+		Node_0xc0000cfce0 [
+			id="0xc0000cfce0"
+			shape=Mrecord
+			label="{{Reshape(1, 12, 1, 1)(%d)|0x34}|{Op|Reshape(1, 12, 1, 1)}|{Shape|(1, 12, 1, 1)}}"
+		];
+		Node_0xc0000cfdc0 [
+			id="0xc0000cfdc0"
+			shape=Mrecord
+			label="{{SizeOf=1(%33)|0x35}|{Op|SizeOf=1}|{Shape|()}}"
+		];
+		Node_0xc0000cfea0 [
+			id="0xc0000cfea0"
+			shape=Mrecord
+			label="{{SizeOf=28(%33)|0x36}|{Op|SizeOf=28}|{Shape|()}}"
+		];
+		Node_0xc00035c7e0 [
+			id="0xc00035c7e0"
+			shape=Mrecord
+			label="{{SizeOf=28(%33)|0x37}|{Op|SizeOf=28}|{Shape|()}}"
+		];
+		Node_0xc00035db20 [
+			id="0xc00035db20"
+			shape=Mrecord
+			label="{{Repeat[0 2 3](%34, %35, %36, %37)|0x38}|{Op|Repeat[0 2 3]}|{Shape|(1, 12, 28, 28)}}"
+		];
+		Node_0xc00035dc00 [
+			id="0xc00035dc00"
+			shape=Mrecord
+			label="{{+ false(%33, %38)|0x39}|{Op|+ false}|{Shape|(1, 12, 28, 28)}}"
+		];
+		Node_0xc00035dce0 [
+			id="0xc00035dce0"
+			shape=Mrecord
+			label="{{&gt;= true(%39, %1b)|0x3a}|{Op|&gt;= true}|{Shape|(1, 12, 28, 28)}}"
+		];
+		Node_0xc00035ddc0 [
+			id="0xc00035ddc0"
+			shape=Mrecord
+			label="{{⊙ false(%39, %3a)|0x3b}|{Op|⊙ false}|{Shape|(1, 12, 28, 28)}}"
+		];
+		Node_0xc00035dea0 [
+			id="0xc00035dea0"
+			shape=Mrecord
+			label="{{MaxPool&#123;1, 12, 28, 28&#125;(kernel: (2, 2), pad: (0, 0), stride: (2, 2))(%3b)|0x3c}|{Op|MaxPool&#123;1, 12, 28, 28&#125;(kernel: (2, 2), pad: (0, 0), stride: (2, 2))}|{Shape|(1, 12, 14, 14)}}"
+		];
+		Node_0xc00047a380 [
+			id="0xc00047a380"
+			shape=Mrecord
+			label="{{im2col&lt;(3,3), (0, 0), (1,1) (1, 1)&gt;(%3c)|0x3d}|{Op|im2col&lt;(3,3), (0, 0), (1,1) (1, 1)&gt;}|{Shape|(1, 12, 12, 108)}}"
+		];
+		Node_0xc00047a460 [
+			id="0xc00047a460"
+			shape=Mrecord
+			label="{{Reshape(8, 108)(%9)|0x3e}|{Op|Reshape(8, 108)}|{Shape|(8, 108)}}"
+		];
+		Node_0xc00047a540 [
+			id="0xc00047a540"
+			shape=Mrecord
+			label="{{Reshape(144, 108)(%3d)|0x3f}|{Op|Reshape(144, 108)}|{Shape|(144, 108)}}"
+		];
+		Node_0xc00047a620 [
+			id="0xc00047a620"
+			shape=Mrecord
+			label="{{A × Bᵀ(%3f, %3e)|0x40}|{Op|A × Bᵀ}|{Shape|(144, 8)}}"
+		];
+		Node_0xc00047a700 [
+			id="0xc00047a700"
+			shape=Mrecord
+			label="{{Reshape(1, 12, 12, 8)(%40)|0x41}|{Op|Reshape(1, 12, 12, 8)}|{Shape|(1, 12, 12, 8)}}"
+		];
+		Node_0xc00047a7e0 [
+			id="0xc00047a7e0"
+			shape=Mrecord
+			label="{{Aᵀ&#123;0, 3, 1, 2&#125;(%41)|0x42}|{Op|Aᵀ&#123;0, 3, 1, 2&#125;}|{Shape|(1, 8, 12, 12)}}"
+		];
+		Node_0xc00047a8c0 [
+			id="0xc00047a8c0"
+			shape=Mrecord
+			label="{{Reshape(1, 8, 1, 1)(%3)|0x43}|{Op|Reshape(1, 8, 1, 1)}|{Shape|(1, 8, 1, 1)}}"
+		];
+		Node_0xc00047a9a0 [
+			id="0xc00047a9a0"
+			shape=Mrecord
+			label="{{SizeOf=1(%42)|0x44}|{Op|SizeOf=1}|{Shape|()}}"
+		];
+		Node_0xc00047aa80 [
+			id="0xc00047aa80"
+			shape=Mrecord
+			label="{{SizeOf=12(%42)|0x45}|{Op|SizeOf=12}|{Shape|()}}"
+		];
+		Node_0xc00047ab60 [
+			id="0xc00047ab60"
+			shape=Mrecord
+			label="{{SizeOf=12(%42)|0x46}|{Op|SizeOf=12}|{Shape|()}}"
+		];
+		Node_0xc00047ac40 [
+			id="0xc00047ac40"
+			shape=Mrecord
+			label="{{Repeat[0 2 3](%43, %44, %45, %46)|0x47}|{Op|Repeat[0 2 3]}|{Shape|(1, 8, 12, 12)}}"
+		];
+		Node_0xc00047ad20 [
+			id="0xc00047ad20"
+			shape=Mrecord
+			label="{{+ false(%42, %47)|0x48}|{Op|+ false}|{Shape|(1, 8, 12, 12)}}"
+		];
+		Node_0xc00047ae00 [
+			id="0xc00047ae00"
+			shape=Mrecord
+			label="{{&gt;= true(%48, %1b)|0x49}|{Op|&gt;= true}|{Shape|(1, 8, 12, 12)}}"
+		];
+		Node_0xc00047aee0 [
+			id="0xc00047aee0"
+			shape=Mrecord
+			label="{{⊙ false(%48, %49)|0x4a}|{Op|⊙ false}|{Shape|(1, 8, 12, 12)}}"
+		];
+		Node_0xc00047afc0 [
+			id="0xc00047afc0"
+			shape=Mrecord
+			label="{{MaxPool&#123;1, 8, 12, 12&#125;(kernel: (2, 2), pad: (0, 0), stride: (2, 2))(%4a)|0x4b}|{Op|MaxPool&#123;1, 8, 12, 12&#125;(kernel: (2, 2), pad: (0, 0), stride: (2, 2))}|{Shape|(1, 8, 6, 6)}}"
+		];
+		Node_0xc00047b0a0 [
+			id="0xc00047b0a0"
+			shape=Mrecord
+			label="{{Aᵀ&#123;0, 2, 3, 1&#125;(%4b)|0x4c}|{Op|Aᵀ&#123;0, 2, 3, 1&#125;}|{Shape|(1, 6, 6, 8)}}"
+		];
+		Node_0xc00047b180 [
+			id="0xc00047b180"
+			shape=Mrecord
+			label="{{Reshape(288)(%4c)|0x4d}|{Op|Reshape(288)}|{Shape|(288)}}"
+		];
+		Node_0xc00047b260 [
+			id="0xc00047b260"
+			shape=Mrecord
+			label="{{Aᵀ × b(%c, %4d)|0x4e}|{Op|Aᵀ × b}|{Shape|(128)}}"
+		];
+		Node_0xc00047b340 [
+			id="0xc00047b340"
+			shape=Mrecord
+			label="{{+ false(%4e, %2)|0x4f}|{Op|+ false}|{Shape|(128)}}"
+		];
+		Node_0xc00047b420 [
+			id="0xc00047b420"
+			shape=Mrecord
+			label="{{&gt;= true(%4f, %1b)|0x50}|{Op|&gt;= true}|{Shape|(128)}}"
+		];
+		Node_0xc00047b500 [
+			id="0xc00047b500"
+			shape=Mrecord
+			label="{{⊙ false(%4f, %50)|0x51}|{Op|⊙ false}|{Shape|(128)}}"
+		];
+		Node_0xc00047b5e0 [
+			id="0xc00047b5e0"
+			shape=Mrecord
+			label="{{Aᵀ × b(%6, %51)|0x52}|{Op|Aᵀ × b}|{Shape|(1)}}"
+		];
+		Node_0xc00047b6c0 [
+			id="0xc00047b6c0"
+			shape=Mrecord
+			label="{{+ false(%52, %7)|0x53}|{Op|+ false}|{Shape|(1)}}"
+		];
+		Node_0xc00047b7a0 [
+			id="0xc00047b7a0"
+			shape=Mrecord
+			label="{{sigmoid(%53)|0x54}|{Op|sigmoid}|{Shape|(1)}}"
+		];
+	}
+	// Node definitions.
+	Node_0xc00035c000 [
+		id="0xc00035c000"
+		shape=Mrecord
+		label="{{node1|0x0}|{Op|%!s(&lt;nil&gt;)}|{Shape|(20)}}"
+	];
+	Node_0xc00035c0e0 [
+		id="0xc00035c0e0"
+		shape=Mrecord
+		label="{{node2|0x1}|{Op|%!s(&lt;nil&gt;)}|{Shape|(32, 3, 3, 3)}}"
+	];
+	Node_0xc00035c1c0 [
+		id="0xc00035c1c0"
+		shape=Mrecord
+		label="{{node3|0x2}|{Op|%!s(&lt;nil&gt;)}|{Shape|(128)}}"
+	];
+	Node_0xc00035c2a0 [
+		id="0xc00035c2a0"
+		shape=Mrecord
+		label="{{node4|0x3}|{Op|%!s(&lt;nil&gt;)}|{Shape|(8)}}"
+	];
+	Node_0xc00035c380 [
+		id="0xc00035c380"
+		shape=Mrecord
+		label="{{node5|0x4}|{Op|%!s(&lt;nil&gt;)}|{Shape|(12, 20, 3, 3)}}"
+	];
+	Node_0xc00035c460 [
+		id="0xc00035c460"
+		shape=Mrecord
+		label="{{node6|0x5}|{Op|%!s(&lt;nil&gt;)}|{Shape|(32)}}"
+	];
+	Node_0xc00035c540 [
+		id="0xc00035c540"
+		shape=Mrecord
+		label="{{node7|0x6}|{Op|%!s(&lt;nil&gt;)}|{Shape|(128, 1)}}"
+	];
+	Node_0xc00035c620 [
+		id="0xc00035c620"
+		shape=Mrecord
+		label="{{node8|0x7}|{Op|%!s(&lt;nil&gt;)}|{Shape|(1)}}"
+	];
+	Node_0xc00035c700 [
+		id="0xc00035c700"
+		shape=Mrecord
+		label="{{node9|0x8}|{Op|%!s(&lt;nil&gt;)}|{Shape|(2)}}"
+	];
+	Node_0xc00035c8c0 [
+		id="0xc00035c8c0"
+		shape=Mrecord
+		label="{{node10|0x9}|{Op|%!s(&lt;nil&gt;)}|{Shape|(8, 12, 3, 3)}}"
+	];
+	Node_0xc00035c9a0 [
+		id="0xc00035c9a0"
+		shape=Mrecord
+		label="{{node11|0xa}|{Op|%!s(&lt;nil&gt;)}|{Shape|(1, 128, 128, 3)}}"
+	];
+	Node_0xc00035ca80 [
+		id="0xc00035ca80"
+		shape=Mrecord
+		label="{{node12|0xb}|{Op|%!s(&lt;nil&gt;)}|{Shape|(20, 32, 3, 3)}}"
+	];
+	Node_0xc00035cb60 [
+		id="0xc00035cb60"
+		shape=Mrecord
+		label="{{node13|0xc}|{Op|%!s(&lt;nil&gt;)}|{Shape|(288, 128)}}"
+	];
+	Node_0xc00035cc40 [
+		id="0xc00035cc40"
+		shape=Mrecord
+		label="{{node14|0xd}|{Op|%!s(&lt;nil&gt;)}|{Shape|(12)}}"
+	];
+	Node_0xc00035cd20 [
+		id="0xc00035cd20"
+		shape=Mrecord
+		label="{{Aᵀ&#123;0, 3, 1, 2&#125;(%a)|0xe}|{Op|Aᵀ&#123;0, 3, 1, 2&#125;}|{Shape|(1, 3, 128, 128)}}"
+	];
+	Node_0xc00035ce00 [
+		id="0xc00035ce00"
+		shape=Mrecord
+		label="{{im2col&lt;(3,3), (0, 0), (1,1) (1, 1)&gt;(%e)|0xf}|{Op|im2col&lt;(3,3), (0, 0), (1,1) (1, 1)&gt;}|{Shape|(1, 126, 126, 27)}}"
+	];
+	Node_0xc00035cee0 [
+		id="0xc00035cee0"
+		shape=Mrecord
+		label="{{Reshape(32, 27)(%1)|0x10}|{Op|Reshape(32, 27)}|{Shape|(32, 27)}}"
+	];
+	Node_0xc00035cfc0 [
+		id="0xc00035cfc0"
+		shape=Mrecord
+		label="{{Reshape(15876, 27)(%f)|0x11}|{Op|Reshape(15876, 27)}|{Shape|(15876, 27)}}"
+	];
+	Node_0xc00035d0a0 [
+		id="0xc00035d0a0"
+		shape=Mrecord
+		label="{{A × Bᵀ(%11, %10)|0x12}|{Op|A × Bᵀ}|{Shape|(15876, 32)}}"
+	];
+	Node_0xc00035d180 [
+		id="0xc00035d180"
+		shape=Mrecord
+		label="{{Reshape(1, 126, 126, 32)(%12)|0x13}|{Op|Reshape(1, 126, 126, 32)}|{Shape|(1, 126, 126, 32)}}"
+	];
+	Node_0xc00035d260 [
+		id="0xc00035d260"
+		shape=Mrecord
+		label="{{Aᵀ&#123;0, 3, 1, 2&#125;(%13)|0x14}|{Op|Aᵀ&#123;0, 3, 1, 2&#125;}|{Shape|(1, 32, 126, 126)}}"
+	];
+	Node_0xc00035d340 [
+		id="0xc00035d340"
+		shape=Mrecord
+		label="{{Reshape(1, 32, 1, 1)(%5)|0x15}|{Op|Reshape(1, 32, 1, 1)}|{Shape|(1, 32, 1, 1)}}"
+	];
+	Node_0xc00035d420 [
+		id="0xc00035d420"
+		shape=Mrecord
+		label="{{SizeOf=1(%14)|0x16}|{Op|SizeOf=1}|{Shape|()}}"
+	];
+	Node_0xc00035d500 [
+		id="0xc00035d500"
+		shape=Mrecord
+		label="{{SizeOf=126(%14)|0x17}|{Op|SizeOf=126}|{Shape|()}}"
+	];
+	Node_0xc00035d5e0 [
+		id="0xc00035d5e0"
+		shape=Mrecord
+		label="{{SizeOf=126(%14)|0x18}|{Op|SizeOf=126}|{Shape|()}}"
+	];
+	Node_0xc00035d6c0 [
+		id="0xc00035d6c0"
+		shape=Mrecord
+		label="{{Repeat[0 2 3](%15, %16, %17, %18)|0x19}|{Op|Repeat[0 2 3]}|{Shape|(1, 32, 126, 126)}}"
+	];
+	Node_0xc00035d7a0 [
+		id="0xc00035d7a0"
+		shape=Mrecord
+		label="{{+ false(%14, %19)|0x1a}|{Op|+ false}|{Shape|(1, 32, 126, 126)}}"
+	];
+	Node_0xc00035d960 [
+		id="0xc00035d960"
+		shape=Mrecord
+		label="{{0|0x1b}|{Op|const| 0}|{Shape|()}}"
+	];
+	Node_0xc00035d880 [
+		id="0xc00035d880"
+		shape=Mrecord
+		label="{{&gt;= true(%1a, %1b)|0x1c}|{Op|&gt;= true}|{Shape|(1, 32, 126, 126)}}"
+	];
+	Node_0xc00035da40 [
+		id="0xc00035da40"
+		shape=Mrecord
+		label="{{⊙ false(%1a, %1c)|0x1d}|{Op|⊙ false}|{Shape|(1, 32, 126, 126)}}"
+	];
+	Node_0xc00047a000 [
+		id="0xc00047a000"
+		shape=Mrecord
+		label="{{MaxPool&#123;1, 32, 126, 126&#125;(kernel: (2, 2), pad: (0, 0), stride: (2, 2))(%1d)|0x1e}|{Op|MaxPool&#123;1, 32, 126, 126&#125;(kernel: (2, 2), pad: (0, 0), stride: (2, 2))}|{Shape|(1, 32, 63, 63)}}"
+	];
+	Node_0xc00047a0e0 [
+		id="0xc00047a0e0"
+		shape=Mrecord
+		label="{{im2col&lt;(3,3), (0, 0), (1,1) (1, 1)&gt;(%1e)|0x1f}|{Op|im2col&lt;(3,3), (0, 0), (1,1) (1, 1)&gt;}|{Shape|(1, 61, 61, 288)}}"
+	];
+	Node_0xc00047a1c0 [
+		id="0xc00047a1c0"
+		shape=Mrecord
+		label="{{Reshape(20, 288)(%b)|0x20}|{Op|Reshape(20, 288)}|{Shape|(20, 288)}}"
+	];
+	Node_0xc00047a2a0 [
+		id="0xc00047a2a0"
+		shape=Mrecord
+		label="{{Reshape(3721, 288)(%1f)|0x21}|{Op|Reshape(3721, 288)}|{Shape|(3721, 288)}}"
+	];
+	Node_0xc0000ce000 [
+		id="0xc0000ce000"
+		shape=Mrecord
+		label="{{A × Bᵀ(%21, %20)|0x22}|{Op|A × Bᵀ}|{Shape|(3721, 20)}}"
+	];
+	Node_0xc0000ce0e0 [
+		id="0xc0000ce0e0"
+		shape=Mrecord
+		label="{{Reshape(1, 61, 61, 20)(%22)|0x23}|{Op|Reshape(1, 61, 61, 20)}|{Shape|(1, 61, 61, 20)}}"
+	];
+	Node_0xc0000ceee0 [
+		id="0xc0000ceee0"
+		shape=Mrecord
+		label="{{Aᵀ&#123;0, 3, 1, 2&#125;(%23)|0x24}|{Op|Aᵀ&#123;0, 3, 1, 2&#125;}|{Shape|(1, 20, 61, 61)}}"
+	];
+	Node_0xc0000cefc0 [
+		id="0xc0000cefc0"
+		shape=Mrecord
+		label="{{Reshape(1, 20, 1, 1)(%0)|0x25}|{Op|Reshape(1, 20, 1, 1)}|{Shape|(1, 20, 1, 1)}}"
+	];
+	Node_0xc0000cf0a0 [
+		id="0xc0000cf0a0"
+		shape=Mrecord
+		label="{{SizeOf=1(%24)|0x26}|{Op|SizeOf=1}|{Shape|()}}"
+	];
+	Node_0xc0000cf180 [
+		id="0xc0000cf180"
+		shape=Mrecord
+		label="{{SizeOf=61(%24)|0x27}|{Op|SizeOf=61}|{Shape|()}}"
+	];
+	Node_0xc0000cf260 [
+		id="0xc0000cf260"
+		shape=Mrecord
+		label="{{SizeOf=61(%24)|0x28}|{Op|SizeOf=61}|{Shape|()}}"
+	];
+	Node_0xc0000cf340 [
+		id="0xc0000cf340"
+		shape=Mrecord
+		label="{{Repeat[0 2 3](%25, %26, %27, %28)|0x29}|{Op|Repeat[0 2 3]}|{Shape|(1, 20, 61, 61)}}"
+	];
+	Node_0xc0000cf420 [
+		id="0xc0000cf420"
+		shape=Mrecord
+		label="{{+ false(%24, %29)|0x2a}|{Op|+ false}|{Shape|(1, 20, 61, 61)}}"
+	];
+	Node_0xc0000cf500 [
+		id="0xc0000cf500"
+		shape=Mrecord
+		label="{{&gt;= true(%2a, %1b)|0x2b}|{Op|&gt;= true}|{Shape|(1, 20, 61, 61)}}"
+	];
+	Node_0xc0000cf5e0 [
+		id="0xc0000cf5e0"
+		shape=Mrecord
+		label="{{⊙ false(%2a, %2b)|0x2c}|{Op|⊙ false}|{Shape|(1, 20, 61, 61)}}"
+	];
+	Node_0xc0000cf6c0 [
+		id="0xc0000cf6c0"
+		shape=Mrecord
+		label="{{MaxPool&#123;1, 20, 61, 61&#125;(kernel: (2, 2), pad: (0, 0), stride: (2, 2))(%2c)|0x2d}|{Op|MaxPool&#123;1, 20, 61, 61&#125;(kernel: (2, 2), pad: (0, 0), stride: (2, 2))}|{Shape|(1, 20, 30, 30)}}"
+	];
+	Node_0xc0000cf7a0 [
+		id="0xc0000cf7a0"
+		shape=Mrecord
+		label="{{im2col&lt;(3,3), (0, 0), (1,1) (1, 1)&gt;(%2d)|0x2e}|{Op|im2col&lt;(3,3), (0, 0), (1,1) (1, 1)&gt;}|{Shape|(1, 28, 28, 180)}}"
+	];
+	Node_0xc0000cf880 [
+		id="0xc0000cf880"
+		shape=Mrecord
+		label="{{Reshape(12, 180)(%4)|0x2f}|{Op|Reshape(12, 180)}|{Shape|(12, 180)}}"
+	];
+	Node_0xc0000cf960 [
+		id="0xc0000cf960"
+		shape=Mrecord
+		label="{{Reshape(784, 180)(%2e)|0x30}|{Op|Reshape(784, 180)}|{Shape|(784, 180)}}"
+	];
+	Node_0xc0000cfa40 [
+		id="0xc0000cfa40"
+		shape=Mrecord
+		label="{{A × Bᵀ(%30, %2f)|0x31}|{Op|A × Bᵀ}|{Shape|(784, 12)}}"
+	];
+	Node_0xc0000cfb20 [
+		id="0xc0000cfb20"
+		shape=Mrecord
+		label="{{Reshape(1, 28, 28, 12)(%31)|0x32}|{Op|Reshape(1, 28, 28, 12)}|{Shape|(1, 28, 28, 12)}}"
+	];
+	Node_0xc0000cfc00 [
+		id="0xc0000cfc00"
+		shape=Mrecord
+		label="{{Aᵀ&#123;0, 3, 1, 2&#125;(%32)|0x33}|{Op|Aᵀ&#123;0, 3, 1, 2&#125;}|{Shape|(1, 12, 28, 28)}}"
+	];
+	Node_0xc0000cfce0 [
+		id="0xc0000cfce0"
+		shape=Mrecord
+		label="{{Reshape(1, 12, 1, 1)(%d)|0x34}|{Op|Reshape(1, 12, 1, 1)}|{Shape|(1, 12, 1, 1)}}"
+	];
+	Node_0xc0000cfdc0 [
+		id="0xc0000cfdc0"
+		shape=Mrecord
+		label="{{SizeOf=1(%33)|0x35}|{Op|SizeOf=1}|{Shape|()}}"
+	];
+	Node_0xc0000cfea0 [
+		id="0xc0000cfea0"
+		shape=Mrecord
+		label="{{SizeOf=28(%33)|0x36}|{Op|SizeOf=28}|{Shape|()}}"
+	];
+	Node_0xc00035c7e0 [
+		id="0xc00035c7e0"
+		shape=Mrecord
+		label="{{SizeOf=28(%33)|0x37}|{Op|SizeOf=28}|{Shape|()}}"
+	];
+	Node_0xc00035db20 [
+		id="0xc00035db20"
+		shape=Mrecord
+		label="{{Repeat[0 2 3](%34, %35, %36, %37)|0x38}|{Op|Repeat[0 2 3]}|{Shape|(1, 12, 28, 28)}}"
+	];
+	Node_0xc00035dc00 [
+		id="0xc00035dc00"
+		shape=Mrecord
+		label="{{+ false(%33, %38)|0x39}|{Op|+ false}|{Shape|(1, 12, 28, 28)}}"
+	];
+	Node_0xc00035dce0 [
+		id="0xc00035dce0"
+		shape=Mrecord
+		label="{{&gt;= true(%39, %1b)|0x3a}|{Op|&gt;= true}|{Shape|(1, 12, 28, 28)}}"
+	];
+	Node_0xc00035ddc0 [
+		id="0xc00035ddc0"
+		shape=Mrecord
+		label="{{⊙ false(%39, %3a)|0x3b}|{Op|⊙ false}|{Shape|(1, 12, 28, 28)}}"
+	];
+	Node_0xc00035dea0 [
+		id="0xc00035dea0"
+		shape=Mrecord
+		label="{{MaxPool&#123;1, 12, 28, 28&#125;(kernel: (2, 2), pad: (0, 0), stride: (2, 2))(%3b)|0x3c}|{Op|MaxPool&#123;1, 12, 28, 28&#125;(kernel: (2, 2), pad: (0, 0), stride: (2, 2))}|{Shape|(1, 12, 14, 14)}}"
+	];
+	Node_0xc00047a380 [
+		id="0xc00047a380"
+		shape=Mrecord
+		label="{{im2col&lt;(3,3), (0, 0), (1,1) (1, 1)&gt;(%3c)|0x3d}|{Op|im2col&lt;(3,3), (0, 0), (1,1) (1, 1)&gt;}|{Shape|(1, 12, 12, 108)}}"
+	];
+	Node_0xc00047a460 [
+		id="0xc00047a460"
+		shape=Mrecord
+		label="{{Reshape(8, 108)(%9)|0x3e}|{Op|Reshape(8, 108)}|{Shape|(8, 108)}}"
+	];
+	Node_0xc00047a540 [
+		id="0xc00047a540"
+		shape=Mrecord
+		label="{{Reshape(144, 108)(%3d)|0x3f}|{Op|Reshape(144, 108)}|{Shape|(144, 108)}}"
+	];
+	Node_0xc00047a620 [
+		id="0xc00047a620"
+		shape=Mrecord
+		label="{{A × Bᵀ(%3f, %3e)|0x40}|{Op|A × Bᵀ}|{Shape|(144, 8)}}"
+	];
+	Node_0xc00047a700 [
+		id="0xc00047a700"
+		shape=Mrecord
+		label="{{Reshape(1, 12, 12, 8)(%40)|0x41}|{Op|Reshape(1, 12, 12, 8)}|{Shape|(1, 12, 12, 8)}}"
+	];
+	Node_0xc00047a7e0 [
+		id="0xc00047a7e0"
+		shape=Mrecord
+		label="{{Aᵀ&#123;0, 3, 1, 2&#125;(%41)|0x42}|{Op|Aᵀ&#123;0, 3, 1, 2&#125;}|{Shape|(1, 8, 12, 12)}}"
+	];
+	Node_0xc00047a8c0 [
+		id="0xc00047a8c0"
+		shape=Mrecord
+		label="{{Reshape(1, 8, 1, 1)(%3)|0x43}|{Op|Reshape(1, 8, 1, 1)}|{Shape|(1, 8, 1, 1)}}"
+	];
+	Node_0xc00047a9a0 [
+		id="0xc00047a9a0"
+		shape=Mrecord
+		label="{{SizeOf=1(%42)|0x44}|{Op|SizeOf=1}|{Shape|()}}"
+	];
+	Node_0xc00047aa80 [
+		id="0xc00047aa80"
+		shape=Mrecord
+		label="{{SizeOf=12(%42)|0x45}|{Op|SizeOf=12}|{Shape|()}}"
+	];
+	Node_0xc00047ab60 [
+		id="0xc00047ab60"
+		shape=Mrecord
+		label="{{SizeOf=12(%42)|0x46}|{Op|SizeOf=12}|{Shape|()}}"
+	];
+	Node_0xc00047ac40 [
+		id="0xc00047ac40"
+		shape=Mrecord
+		label="{{Repeat[0 2 3](%43, %44, %45, %46)|0x47}|{Op|Repeat[0 2 3]}|{Shape|(1, 8, 12, 12)}}"
+	];
+	Node_0xc00047ad20 [
+		id="0xc00047ad20"
+		shape=Mrecord
+		label="{{+ false(%42, %47)|0x48}|{Op|+ false}|{Shape|(1, 8, 12, 12)}}"
+	];
+	Node_0xc00047ae00 [
+		id="0xc00047ae00"
+		shape=Mrecord
+		label="{{&gt;= true(%48, %1b)|0x49}|{Op|&gt;= true}|{Shape|(1, 8, 12, 12)}}"
+	];
+	Node_0xc00047aee0 [
+		id="0xc00047aee0"
+		shape=Mrecord
+		label="{{⊙ false(%48, %49)|0x4a}|{Op|⊙ false}|{Shape|(1, 8, 12, 12)}}"
+	];
+	Node_0xc00047afc0 [
+		id="0xc00047afc0"
+		shape=Mrecord
+		label="{{MaxPool&#123;1, 8, 12, 12&#125;(kernel: (2, 2), pad: (0, 0), stride: (2, 2))(%4a)|0x4b}|{Op|MaxPool&#123;1, 8, 12, 12&#125;(kernel: (2, 2), pad: (0, 0), stride: (2, 2))}|{Shape|(1, 8, 6, 6)}}"
+	];
+	Node_0xc00047b0a0 [
+		id="0xc00047b0a0"
+		shape=Mrecord
+		label="{{Aᵀ&#123;0, 2, 3, 1&#125;(%4b)|0x4c}|{Op|Aᵀ&#123;0, 2, 3, 1&#125;}|{Shape|(1, 6, 6, 8)}}"
+	];
+	Node_0xc00047b180 [
+		id="0xc00047b180"
+		shape=Mrecord
+		label="{{Reshape(288)(%4c)|0x4d}|{Op|Reshape(288)}|{Shape|(288)}}"
+	];
+	Node_0xc00047b260 [
+		id="0xc00047b260"
+		shape=Mrecord
+		label="{{Aᵀ × b(%c, %4d)|0x4e}|{Op|Aᵀ × b}|{Shape|(128)}}"
+	];
+	Node_0xc00047b340 [
+		id="0xc00047b340"
+		shape=Mrecord
+		label="{{+ false(%4e, %2)|0x4f}|{Op|+ false}|{Shape|(128)}}"
+	];
+	Node_0xc00047b420 [
+		id="0xc00047b420"
+		shape=Mrecord
+		label="{{&gt;= true(%4f, %1b)|0x50}|{Op|&gt;= true}|{Shape|(128)}}"
+	];
+	Node_0xc00047b500 [
+		id="0xc00047b500"
+		shape=Mrecord
+		label="{{⊙ false(%4f, %50)|0x51}|{Op|⊙ false}|{Shape|(128)}}"
+	];
+	Node_0xc00047b5e0 [
+		id="0xc00047b5e0"
+		shape=Mrecord
+		label="{{Aᵀ × b(%6, %51)|0x52}|{Op|Aᵀ × b}|{Shape|(1)}}"
+	];
+	Node_0xc00047b6c0 [
+		id="0xc00047b6c0"
+		shape=Mrecord
+		label="{{+ false(%52, %7)|0x53}|{Op|+ false}|{Shape|(1)}}"
+	];
+	Node_0xc00047b7a0 [
+		id="0xc00047b7a0"
+		shape=Mrecord
+		label="{{sigmoid(%53)|0x54}|{Op|sigmoid}|{Shape|(1)}}"
+	];
+
+	// Edge definitions.
+	Node_0xc00035cd20 -> Node_0xc00035c9a0;
+	Node_0xc00035ce00 -> Node_0xc00035cd20;
+	Node_0xc00035cee0 -> Node_0xc00035c0e0;
+	Node_0xc00035cfc0 -> Node_0xc00035ce00;
+	Node_0xc00035d0a0 -> Node_0xc00035cee0;
+	Node_0xc00035d0a0 -> Node_0xc00035cfc0;
+	Node_0xc00035d180 -> Node_0xc00035d0a0;
+	Node_0xc00035d260 -> Node_0xc00035d180;
+	Node_0xc00035d340 -> Node_0xc00035c460;
+	Node_0xc00035d420 -> Node_0xc00035d260;
+	Node_0xc00035d500 -> Node_0xc00035d260;
+	Node_0xc00035d5e0 -> Node_0xc00035d260;
+	Node_0xc00035d6c0 -> Node_0xc00035d340;
+	Node_0xc00035d6c0 -> Node_0xc00035d420;
+	Node_0xc00035d6c0 -> Node_0xc00035d500;
+	Node_0xc00035d6c0 -> Node_0xc00035d5e0;
+	Node_0xc00035d7a0 -> Node_0xc00035d260;
+	Node_0xc00035d7a0 -> Node_0xc00035d6c0;
+	Node_0xc00035d880 -> Node_0xc00035d7a0;
+	Node_0xc00035d880 -> Node_0xc00035d960;
+	Node_0xc00035da40 -> Node_0xc00035d7a0;
+	Node_0xc00035da40 -> Node_0xc00035d880;
+	Node_0xc00047a000 -> Node_0xc00035da40;
+	Node_0xc00047a0e0 -> Node_0xc00047a000;
+	Node_0xc00047a1c0 -> Node_0xc00035ca80;
+	Node_0xc00047a2a0 -> Node_0xc00047a0e0;
+	Node_0xc0000ce000 -> Node_0xc00047a1c0;
+	Node_0xc0000ce000 -> Node_0xc00047a2a0;
+	Node_0xc0000ce0e0 -> Node_0xc0000ce000;
+	Node_0xc0000ceee0 -> Node_0xc0000ce0e0;
+	Node_0xc0000cefc0 -> Node_0xc00035c000;
+	Node_0xc0000cf0a0 -> Node_0xc0000ceee0;
+	Node_0xc0000cf180 -> Node_0xc0000ceee0;
+	Node_0xc0000cf260 -> Node_0xc0000ceee0;
+	Node_0xc0000cf340 -> Node_0xc0000cefc0;
+	Node_0xc0000cf340 -> Node_0xc0000cf0a0;
+	Node_0xc0000cf340 -> Node_0xc0000cf180;
+	Node_0xc0000cf340 -> Node_0xc0000cf260;
+	Node_0xc0000cf420 -> Node_0xc0000ceee0;
+	Node_0xc0000cf420 -> Node_0xc0000cf340;
+	Node_0xc0000cf500 -> Node_0xc00035d960;
+	Node_0xc0000cf500 -> Node_0xc0000cf420;
+	Node_0xc0000cf5e0 -> Node_0xc0000cf420;
+	Node_0xc0000cf5e0 -> Node_0xc0000cf500;
+	Node_0xc0000cf6c0 -> Node_0xc0000cf5e0;
+	Node_0xc0000cf7a0 -> Node_0xc0000cf6c0;
+	Node_0xc0000cf880 -> Node_0xc00035c380;
+	Node_0xc0000cf960 -> Node_0xc0000cf7a0;
+	Node_0xc0000cfa40 -> Node_0xc0000cf880;
+	Node_0xc0000cfa40 -> Node_0xc0000cf960;
+	Node_0xc0000cfb20 -> Node_0xc0000cfa40;
+	Node_0xc0000cfc00 -> Node_0xc0000cfb20;
+	Node_0xc0000cfce0 -> Node_0xc00035cc40;
+	Node_0xc0000cfdc0 -> Node_0xc0000cfc00;
+	Node_0xc0000cfea0 -> Node_0xc0000cfc00;
+	Node_0xc00035c7e0 -> Node_0xc0000cfc00;
+	Node_0xc00035db20 -> Node_0xc0000cfce0;
+	Node_0xc00035db20 -> Node_0xc0000cfdc0;
+	Node_0xc00035db20 -> Node_0xc0000cfea0;
+	Node_0xc00035db20 -> Node_0xc00035c7e0;
+	Node_0xc00035dc00 -> Node_0xc0000cfc00;
+	Node_0xc00035dc00 -> Node_0xc00035db20;
+	Node_0xc00035dce0 -> Node_0xc00035d960;
+	Node_0xc00035dce0 -> Node_0xc00035dc00;
+	Node_0xc00035ddc0 -> Node_0xc00035dc00;
+	Node_0xc00035ddc0 -> Node_0xc00035dce0;
+	Node_0xc00035dea0 -> Node_0xc00035ddc0;
+	Node_0xc00047a380 -> Node_0xc00035dea0;
+	Node_0xc00047a460 -> Node_0xc00035c8c0;
+	Node_0xc00047a540 -> Node_0xc00047a380;
+	Node_0xc00047a620 -> Node_0xc00047a460;
+	Node_0xc00047a620 -> Node_0xc00047a540;
+	Node_0xc00047a700 -> Node_0xc00047a620;
+	Node_0xc00047a7e0 -> Node_0xc00047a700;
+	Node_0xc00047a8c0 -> Node_0xc00035c2a0;
+	Node_0xc00047a9a0 -> Node_0xc00047a7e0;
+	Node_0xc00047aa80 -> Node_0xc00047a7e0;
+	Node_0xc00047ab60 -> Node_0xc00047a7e0;
+	Node_0xc00047ac40 -> Node_0xc00047a8c0;
+	Node_0xc00047ac40 -> Node_0xc00047a9a0;
+	Node_0xc00047ac40 -> Node_0xc00047aa80;
+	Node_0xc00047ac40 -> Node_0xc00047ab60;
+	Node_0xc00047ad20 -> Node_0xc00047a7e0;
+	Node_0xc00047ad20 -> Node_0xc00047ac40;
+	Node_0xc00047ae00 -> Node_0xc00035d960;
+	Node_0xc00047ae00 -> Node_0xc00047ad20;
+	Node_0xc00047aee0 -> Node_0xc00047ad20;
+	Node_0xc00047aee0 -> Node_0xc00047ae00;
+	Node_0xc00047afc0 -> Node_0xc00047aee0;
+	Node_0xc00047b0a0 -> Node_0xc00047afc0;
+	Node_0xc00047b180 -> Node_0xc00047b0a0;
+	Node_0xc00047b260 -> Node_0xc00035cb60;
+	Node_0xc00047b260 -> Node_0xc00047b180;
+	Node_0xc00047b340 -> Node_0xc00035c1c0;
+	Node_0xc00047b340 -> Node_0xc00047b260;
+	Node_0xc00047b420 -> Node_0xc00035d960;
+	Node_0xc00047b420 -> Node_0xc00047b340;
+	Node_0xc00047b500 -> Node_0xc00047b340;
+	Node_0xc00047b500 -> Node_0xc00047b420;
+	Node_0xc00047b5e0 -> Node_0xc00035c540;
+	Node_0xc00047b5e0 -> Node_0xc00047b500;
+	Node_0xc00047b6c0 -> Node_0xc00035c620;
+	Node_0xc00047b6c0 -> Node_0xc00047b5e0;
+	Node_0xc00047b7a0 -> Node_0xc00047b6c0;
+}
