@@ -3,14 +3,15 @@ package main
 import (
 	"io/ioutil"
 	"log"
+	"testing"
 
 	"github.com/owulveryck/onnx-go"
 	"github.com/owulveryck/onnx-go/backend/x/gorgonnx"
-	"gorgonia.org/gorgonia/encoding/dot"
+	xvm "gorgonia.org/gorgonia/x/vm"
 	"gorgonia.org/tensor"
 )
 
-func main() {
+func TestRace(t *testing.T) {
 	b, err := ioutil.ReadFile("model.onnx")
 	if err != nil {
 		log.Fatal(err)
@@ -22,16 +23,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-	t := tensor.New(
+	xT := tensor.New(
 		tensor.WithShape(1, 128, 128, 3),
 		tensor.Of(tensor.Float32))
-	model.SetInput(0, t)
+	model.SetInput(0, xT)
 	err = backend.PopulateExprgraph()
 	if err != nil {
 		log.Println(err)
 	}
 	exprgraph, _ := backend.GetExprGraph()
-	//backend.SetVM(xvm.NewGoMachine(exprgraph))
+	backend.SetVM(xvm.NewGoMachine(exprgraph))
 	err = backend.Run()
 	if err != nil {
 		log.Println(err)
@@ -42,12 +43,14 @@ func main() {
 	}
 
 	log.Println(output[0])
-	b, err = dot.Marshal(exprgraph)
-	if err != nil {
-		log.Fatal(err)
-	}
-	err = ioutil.WriteFile("model.dot", b, 0644)
-	if err != nil {
-		log.Fatal(err)
-	}
+	/*
+		b, err = dot.Marshal(exprgraph)
+		if err != nil {
+			log.Fatal(err)
+		}
+		err = ioutil.WriteFile("model.dot", b, 0644)
+		if err != nil {
+			log.Fatal(err)
+		}
+	*/
 }
