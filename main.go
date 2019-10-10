@@ -1,8 +1,10 @@
 package main
 
 import (
+	"fmt"
 	"io/ioutil"
 	"log"
+	"time"
 
 	"github.com/owulveryck/onnx-go"
 	"github.com/owulveryck/onnx-go/backend/x/gorgonnx"
@@ -32,7 +34,10 @@ func main() {
 	}
 	exprgraph, _ := backend.GetExprGraph()
 	backend.SetVM(xvm.NewGoMachine(exprgraph))
+	start := time.Now()
 	err = backend.Run()
+	elapsed := time.Since(start)
+	log.Printf("Computation time: %v\n", elapsed)
 	if err != nil {
 		log.Println(err)
 	}
@@ -41,7 +46,7 @@ func main() {
 		log.Println(err)
 	}
 
-	log.Println(output[0])
+	fmt.Println(output[0])
 	/*
 		b, err = dot.Marshal(exprgraph)
 		if err != nil {
