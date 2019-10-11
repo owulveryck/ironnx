@@ -1,22 +1,32 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"io/ioutil"
 	"log"
+	"os"
 	"time"
 
 	"github.com/owulveryck/onnx-go"
 	"github.com/owulveryck/onnx-go/backend/x/gorgonnx"
 	xvm "gorgonia.org/gorgonia/x/vm"
-	"gorgonia.org/tensor"
+)
+
+const (
+	HSize = 128
+	WSize = 128
 )
 
 func main() {
-	b, err := ioutil.ReadFile("model.onnx")
+	modelOnnx := flag.String("model", "model.onnx", "the pre-trained model in onnx format")
+	imgF := flag.String("img", "car.jpg", "the path to the image")
+	flag.Parse()
+	b, err := ioutil.ReadFile(*modelOnnx)
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	backend := gorgonnx.NewGraph()
 	model := onnx.NewModel(backend)
 	err = model.UnmarshalBinary(b)
@@ -24,10 +34,18 @@ func main() {
 		log.Fatal(err)
 	}
 
-	t := tensor.New(
-		tensor.WithShape(1, 128, 128, 3),
-		tensor.Of(tensor.Float32))
-	model.SetInput(0, t)
+	img, err := os.Open(*imgF)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	inputT, err := GetTensorFromImage(img)
+	if err != nil {
+		log.Fatal(err)
+	}
+	img.Close()
+	model.SetInput(0, inputT)
+
 	err = backend.PopulateExprgraph()
 	if err != nil {
 		log.Println(err)
