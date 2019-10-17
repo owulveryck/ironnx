@@ -48,15 +48,15 @@ func imageToNormalizedBWHC(img *image.RGBA, dst tensor.Tensor) error {
 				if a != 65535 && a != 0 {
 					return fmt.Errorf("Transparency not handled %v", a)
 				}
-				err := dst.SetAt(float32(r)/65535, 0, x, y, 0)
+				err := dst.SetAt(float32(r)/255, 0, x, y, 0)
 				if err != nil {
 					return err
 				}
-				err = dst.SetAt(float32(g)/65535, 0, x, y, 1)
+				err = dst.SetAt(float32(g)/255, 0, x, y, 1)
 				if err != nil {
 					return err
 				}
-				err = dst.SetAt(float32(b)/65535, 0, x, y, 2)
+				err = dst.SetAt(float32(b)/255, 0, x, y, 2)
 				if err != nil {
 					return err
 				}

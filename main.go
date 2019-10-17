@@ -63,8 +63,7 @@ func main() {
 	if err != nil {
 		log.Println(err)
 	}
-
-	fmt.Println(output[0])
+	fmt.Printf("%e\n", output[0])
 	/*
 		b, err = dot.Marshal(exprgraph)
 		if err != nil {
