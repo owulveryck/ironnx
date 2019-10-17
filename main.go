@@ -63,7 +63,12 @@ func main() {
 	if err != nil {
 		log.Println(err)
 	}
-	fmt.Printf("%e\n", output[0])
+	//fmt.Println(output[0].Data())
+	message := "it's not a car"
+	if output[0].Data().(float32) < 1e-4 {
+		message = "It's a car"
+	}
+	fmt.Println(message)
 	/*
 		b, err = dot.Marshal(exprgraph)
 		if err != nil {

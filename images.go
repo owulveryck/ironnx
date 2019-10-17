@@ -21,7 +21,7 @@ func resizeImage(img image.Image) (*image.RGBA, error) {
 }
 
 // Create a tensor BHWC from the image; the values are normalized between 0 and 1
-func imageToNormalizedBWHC(img *image.RGBA, dst tensor.Tensor) error {
+func imageToNormalizedBHWC(img *image.RGBA, dst tensor.Tensor) error {
 	// check if tensor is a pointer
 	rv := reflect.ValueOf(dst)
 	if rv.Kind() != reflect.Ptr || rv.IsNil() {
@@ -40,23 +40,31 @@ func imageToNormalizedBWHC(img *image.RGBA, dst tensor.Tensor) error {
 	if dst.Shape()[1] != h || dst.Shape()[2] != w {
 		return fmt.Errorf("cannot fit image into tensor; image is %v*%v but tensor is %v*%v", h, w, dst.Shape()[2], dst.Shape()[3])
 	}
+	var m uint8
+	for i, e := range img.Pix {
+		if i == 0 || e > m {
+			m = e
+		}
+	}
+	max := uint32(m)
+	max |= max << 8
 	switch dst.Dtype() {
 	case tensor.Float32:
 		for x := 0; x < w; x++ {
 			for y := 0; y < h; y++ {
 				r, g, b, a := img.At(x, y).RGBA()
-				if a != 65535 && a != 0 {
+				if a != max && a != 0 {
 					return fmt.Errorf("Transparency not handled %v", a)
 				}
-				err := dst.SetAt(float32(r)/255, 0, x, y, 0)
+				err := dst.SetAt(float32(r)/float32(max), 0, y, x, 0)
 				if err != nil {
 					return err
 				}
-				err = dst.SetAt(float32(g)/255, 0, x, y, 1)
+				err = dst.SetAt(float32(g)/float32(max), 0, y, x, 1)
 				if err != nil {
 					return err
 				}
-				err = dst.SetAt(float32(b)/255, 0, x, y, 2)
+				err = dst.SetAt(float32(b)/float32(max), 0, y, x, 2)
 				if err != nil {
 					return err
 				}
@@ -84,6 +92,6 @@ func GetTensorFromImage(r io.Reader) (tensor.Tensor, error) {
 		return nil, err
 	}
 	t := tensor.NewDense(tensor.Float32, []int{1, WSize, HSize, 3})
-	err = imageToNormalizedBWHC(resized, t)
+	err = imageToNormalizedBHWC(resized, t)
 	return t, err
 }
